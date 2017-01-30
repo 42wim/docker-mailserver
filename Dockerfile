@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Thomas VIAL
+MAINTAINER 42wim
 
 # Packages
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y install postfix postfix-pcre ca-certificates logrotate
