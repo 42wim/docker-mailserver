@@ -1,3 +1,10 @@
+# fork of docker-mailserver
+
+This is a fork of docker-mailserver used for 512MB DigitalOcean droplets.
+It differs with upstream by
+- using ubuntu 16.04 (because of opendmarc crashes)
+- removing unneeded (for me) and memoryhungry services (amavis/spamassassin/filebeat/clamav/fail2ban)
+
 # docker-mailserver
 
 [![Build Status](https://travis-ci.org/tomav/docker-mailserver.svg?branch=master)](https://travis-ci.org/tomav/docker-mailserver) [![Docker Pulls](https://img.shields.io/docker/pulls/tvial/docker-mailserver.svg)](https://hub.docker.com/r/tvial/docker-mailserver/) [![Github Stars](https://img.shields.io/github/stars/tomav/docker-mailserver.svg?label=github%20%E2%98%85)](https://github.com/tomav/docker-mailserver/) [![Github Stars](https://img.shields.io/github/contributors/tomav/docker-mailserver.svg)](https://github.com/tomav/docker-mailserver/) [![Github Forks](https://img.shields.io/github/forks/tomav/docker-mailserver.svg?label=github%20forks)](https://github.com/tomav/docker-mailserver/)
