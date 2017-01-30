@@ -160,7 +160,7 @@ function register_functions() {
 		_register_start_daemon "_start_daemons_clamav"
 	fi
 
-	_register_start_daemon "_start_daemons_amavis"
+	#_register_start_daemon "_start_daemons_amavis"
 	################### << daemon funcs
 }
 ##########################################################################
