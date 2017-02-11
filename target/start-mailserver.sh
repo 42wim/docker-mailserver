@@ -95,11 +95,11 @@ function register_functions() {
 	_register_setup_function "_setup_docker_permit"
 
 	_register_setup_function "_setup_mailname"
-	_register_setup_function "_setup_amavis"
+	#_register_setup_function "_setup_amavis"
 
 	_register_setup_function "_setup_postfix_override_configuration"
 	_register_setup_function "_setup_postfix_sasl_password"
-	_register_setup_function "_setup_security_stack"
+	#_register_setup_function "_setup_security_stack"
 	_register_setup_function "_setup_postfix_aliases"
 	_register_setup_function "_setup_postfix_vhost"
 
