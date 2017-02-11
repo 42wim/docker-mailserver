@@ -63,7 +63,10 @@ RUN sed -i -r "/^#?compress/c\compress\ncopytruncate" /etc/logrotate.conf && \
   mkdir -p /var/log/mail && chown syslog:root /var/log/mail && \
   sed -i -r 's|/var/log/mail|/var/log/mail/mail|g' /etc/rsyslog.d/50-default.conf && \
   sed -i -r 's|;auth,authpriv.none|;mail.none;mail.error;auth,authpriv.none|g' /etc/rsyslog.d/50-default.conf && \
-  sed -i -r 's|/var/log/mail|/var/log/mail/mail|g' /etc/logrotate.d/rsyslog
+  sed -i -r 's|/var/log/mail|/var/log/mail/mail|g' /etc/logrotate.d/rsyslog && \
+  sed -i -r '/postrotate/d' /etc/logrotate.d/rsyslog && \
+  sed -i -r '/invoke-rc.*/d' /etc/logrotate.d/rsyslog && \
+  sed -i -r '/endscript/d' /etc/logrotate.d/rsyslog
 
 # Get LetsEncrypt signed certificate
 RUN curl -s https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem > /etc/ssl/certs/lets-encrypt-x3-cross-signed.pem
