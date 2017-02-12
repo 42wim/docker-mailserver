@@ -71,6 +71,9 @@ RUN sed -i -r "/^#?compress/c\compress\ncopytruncate" /etc/logrotate.conf && \
 # Get LetsEncrypt signed certificate
 RUN curl -s https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.pem > /etc/ssl/certs/lets-encrypt-x3-cross-signed.pem
 
+# Remove unnecessary files
+RUN rm /etc/cron.weekly/fstrim
+
 COPY ./target/bin /usr/local/bin
 # Start-mailserver script
 COPY ./target/start-mailserver.sh /usr/local/bin/
