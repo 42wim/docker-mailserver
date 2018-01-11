@@ -89,7 +89,7 @@ COPY target/opendmarc/default-opendmarc /etc/default/opendmarc
 COPY target/opendmarc/ignore.hosts /etc/opendmarc/ignore.hosts
 
 # Configures Postfix
-COPY target/postfix/main.cf target/postfix/master.cf /etc/postfix/
+COPY target/postfix/main.cf target/postfix/master.cf target/postfix/recipient_access.pcre /etc/postfix/
 COPY target/postfix/sender_header_filter.pcre /etc/postfix/maps/sender_header_filter.pcre
 RUN echo "" > /etc/aliases && \
   openssl dhparam -out /etc/postfix/dhparams.pem 2048
