@@ -67,6 +67,8 @@ lmtp      unix  -       -       n       -       -       lmtp
 anvil     unix  -       -       y       -       1       anvil
 scache    unix  -       -       y       -       1       scache
 
+dovecot   unix  -       n       n       -       -       pipe
+  flags=DROhu user=docker argv=/usr/lib/dovecot/deliver -f ${sender} -a ${original_recipient} -d ${user}@${nexthop} -m ${extension}
 maildrop  unix  -       n       n       -       -       pipe
   flags=DRhu user=vmail argv=/usr/bin/maildrop -d ${recipient}
 uucp      unix  -       n       n       -       -       pipe
