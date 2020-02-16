@@ -121,7 +121,6 @@ function register_functions() {
 	_register_setup_function "_setup_docker_permit"
 
 	_register_setup_function "_setup_mailname"
-	_register_setup_function "_setup_amavis"
 	_register_setup_function "_setup_dmarc_hostname"
 	_register_setup_function "_setup_postfix_hostname"
 	_register_setup_function "_setup_dovecot_hostname"
@@ -129,7 +128,6 @@ function register_functions() {
 	_register_setup_function "_setup_postfix_smtputf8"
 	_register_setup_function "_setup_postfix_sasl"
 	_register_setup_function "_setup_postfix_sasl_password"
-	_register_setup_function "_setup_security_stack"
 	_register_setup_function "_setup_postfix_aliases"
 	_register_setup_function "_setup_postfix_vhost"
 	_register_setup_function "_setup_postfix_dhparam"
@@ -175,7 +173,7 @@ function register_functions() {
 	if [ "$LOGWATCH_TRIGGER" != "none" ]; then
 		_register_setup_function "_setup_logwatch"
 	fi
-	
+
 	_register_setup_function "_setup_user_patches"
 
         # Compute last as the config files are modified in-place
