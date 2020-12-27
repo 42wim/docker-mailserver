@@ -157,11 +157,6 @@ COPY target/supervisor/conf.d/* /etc/supervisor/conf.d/
 
 WORKDIR /
 
-# Switch iptables and ip6tables to legacy for fail2ban
-RUN update-alternatives --set iptables /usr/sbin/iptables-legacy \
-  && update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy
-
-
 EXPOSE 25 587 143 465 993 110 995 4190
 
 CMD ["supervisord", "-c", "/etc/supervisor/supervisord.conf"]
