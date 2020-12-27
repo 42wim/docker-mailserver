@@ -79,6 +79,10 @@ RUN \
   update-locale && \
   rm /etc/cron.daily/00logwatch
 
+# no syslog user in debian compared to ubuntu
+RUN adduser --system syslog && \
+  useradd -u 5000 -d /home/docker -s /bin/bash -p "$(echo docker | openssl passwd -1 -stdin)" docker
+
 # Configures Dovecot
 COPY target/dovecot/auth-passwdfile.inc target/dovecot/??-*.conf /etc/dovecot/conf.d/
 COPY target/dovecot/scripts/quota-warning.sh /usr/local/bin/quota-warning.sh
